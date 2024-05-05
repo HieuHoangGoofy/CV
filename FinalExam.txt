@@ -1,0 +1,20 @@
+- Để tìm corresponding giữa hai ảnh thì tìm những keypoints (sift)
+/x/ Canny edge directions: độ lệch của đạo hàm màu bậc nhất: F(x+1) - F(x) (độ lệch giữa hai điểm màu lân cận - trên,dưới - trái,phải)
+- Hướng của một điểm ảnh chính là độ lệch màu của hàm bậc nhất theo chiều y của hướng dọc chia cho hướng ngang
+- Với một điểm ảnh bất kỳ thì ta tìm ra hướng của điểm ảnh đó, histogram của hướng, có 8 hướng (0 -> 7)
+- Muốn tạo một keypoints thì phải có 16 khối xung quang, mỗi khối có kích thước 4 x 4 pixel, có 8 chiều
+- Tìm 2 điểm gần nhau giữa hai tập điểm ảnh sift của hai ảnh, điều kiện là m.distance <= 0.9 * n.distance 
+/x/ Construct Data Matrix: Tạo một ma trận data chứa tấ
+- Có 6 tham số đại diện cho phép thay đổi (biến đổi affine)
+- Muốn tìm 6 tham số thì cần n hoặc 6 phương trình ( n = số cặp corresponding), để giảm độ phức tạp thì ta dùng phương pháp Random Sample Concencus
+- Homography estimation: 
+- Các bướt tạo panorama image.
+- Homography vs affine
+- Types of warping (plannar,..)
+
+----Final----
+SIFT : LT + Code (40%)
+Classification: HOG & SVM (30%)
+Câu 1: Homography: Coding
+Câu 2: HOG (LT + Code)
+Câu 3: Optical Flow: Kanade & LK (LT + code + Math)
